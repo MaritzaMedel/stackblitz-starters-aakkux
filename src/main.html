@@ -1,0 +1,30 @@
+<h1>Angular Router App</h1>
+<nav class="navbar navbar-light" style="background-color: #e3f2fd">
+  <a routerLink="/home" routerLinkActive="active" ariaCurrentWhenActive="page"
+    >Home</a
+  >
+  <a
+    routerLink="/materias"
+    routerLinkActive="active"
+    ariaCurrentWhenActive="page"
+    >Materias</a
+  >
+  <a
+    routerLink="/alumnos"
+    routerLinkActive="active"
+    ariaCurrentWhenActive="page"
+    >Alumnos</a
+  >
+  <a
+    routerLink="/acercaDe"
+    routerLinkActive="active"
+    ariaCurrentWhenActive="page"
+    >Acerca de</a
+  >
+</nav>
+
+<nav></nav>
+<hr />
+<div class="container" id="contenedor">
+  <router-outlet></router-outlet>
+</div>
