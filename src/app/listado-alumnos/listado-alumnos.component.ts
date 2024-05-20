@@ -1,12 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Alumno } from '../gestion-horas/gestion-horas.component';
+
 
 @Component({
-  selector: 'app-listado-alumnos',
-  standalone: true,
-  imports: [],
+  selector: 'app-alumnos-list',
   templateUrl: './listado-alumnos.component.html',
-  styleUrl: './listado-alumnos.component.css'
+  styleUrls: ['./listado-alumnos.component.css']
 })
-export class ListadoAlumnosComponent {
+export class listadoAlumnos implements OnInit {
+  alumnos: any[] | undefined;
 
+  constructor(private alumnoService: Alumno) { }
+
+  ngOnInit(): void {
+    this.alumnos = this.alumnoService.getAlumnos();
+  }
 }
+
