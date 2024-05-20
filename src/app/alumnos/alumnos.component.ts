@@ -42,9 +42,7 @@ class Alumno {
 class ListaAlumnos {
   public alumnos: Alumno[] = [];
 
-  /*constructor() {
-    this.get();
-  }*/
+  
 
   public agregar(alumno: Alumno) {
     this.alumnos.push(alumno);
