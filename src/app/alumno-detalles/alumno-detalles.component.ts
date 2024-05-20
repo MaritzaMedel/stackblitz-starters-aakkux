@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { AlumnoService } from './alumno.service';
+import { Alumno, ListaAlumnos } from '../gestion-horas/gestion-horas.component';
 
 
 @Component({
@@ -8,16 +7,14 @@ import { AlumnoService } from './alumno.service';
   templateUrl: './alumno-detalles.component.html',
   styleUrls: ['./alumno-detalles.component.css'],
 })
-export class AlumnoDetallesComponent implements OnInit {
-  alumno: any;
+export class AlumnoDetallesComponent {
+  alumnos: ListaAlumnos[]=[];
 
   constructor(
-    private route: ActivatedRoute,
-    private alumnoService: AlumnoService
+    private alumno: Alumno,
   ) {}
 
-  ngOnInit(): void {
-    const matricula = this.route.snapshot.paramMap.get('matricula');
-    this.alumno = this.alumnoService.getAlumnoById(matricula);
+  getAlumno(): void {
+    
   }
 }

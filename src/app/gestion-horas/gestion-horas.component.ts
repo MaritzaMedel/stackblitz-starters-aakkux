@@ -208,4 +208,14 @@ export class ListaAlumnos {
   public remove(index: number) {
     this.alumnos.splice(index, 1);
   }
+
+  getAlumnosComputacion() {
+    return this.alumnos.filter(
+      (alumno) => alumno.getCarrera()=== 'Ingeniería en Computación'
+    );
+  }
+
+  getAlumnoById(matricula: string) {
+    return this.alumnos.find((alumno) => alumno.getMatricula() === matricula);
+  }
 }
