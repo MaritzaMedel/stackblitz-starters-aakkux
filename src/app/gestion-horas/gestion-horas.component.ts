@@ -31,7 +31,8 @@ export class GestionHorasComponent {
         '21010008',
         6,
         'maritzamedel2@gmail.com',
-        178
+        178,
+        'Azurian'
       )
     );
     this.listaAlumnos.agregar(
@@ -42,7 +43,8 @@ export class GestionHorasComponent {
         '21010042',
         6,
         'anny@gmail.com',
-        200
+        200,
+        'Azurian'
       )
     );
     this.listaAlumnos.agregar(
@@ -53,7 +55,9 @@ export class GestionHorasComponent {
         '21010022',
         6,
         'cesar@gmail.com',
-        100
+        100,
+        'Azurian'
+       
       )
     );
     this.getLocalStorage();
@@ -104,7 +108,9 @@ export class GestionHorasComponent {
             alumnoData.matricula,
             alumnoData.semestre,
             alumnoData.correoElectronico,
-            alumnoData.horasServicio
+            alumnoData.horasServicio,
+            alumnoData.empresa
+            
           )
       );
       alumnosObj.forEach((alumnosObj) => {
@@ -127,7 +133,8 @@ export class Alumno {
     private matricula: string,
     private semestre: number,
     private correoElectronico: string,
-    private horasServicio: number
+    private horasServicio: number,
+    private empresa:string,
   ) {
     this.nombre = nombre;
     this.carrera = carrera;
@@ -136,6 +143,7 @@ export class Alumno {
     this.semestre = semestre;
     this.correoElectronico = correoElectronico;
     this.horasServicio = horasServicio;
+    this.empresa=empresa;
   }
 
   // Getters
@@ -166,6 +174,9 @@ export class Alumno {
   getHorasServicio() {
     return this.horasServicio;
   }
+  getEmpresa(){
+    return this.empresa;
+  }
   // Setters
   setNombre(nombre: string) {
     this.nombre = nombre;
@@ -193,6 +204,9 @@ export class Alumno {
   setHorasServicio(horasServicio: number) {
     this.horasServicio = horasServicio;
   }
+  setEmpresa(empresa:string){
+    this.empresa=empresa;
+  }
 
   obtenerDatos() {
     return this;
@@ -208,4 +222,16 @@ export class ListaAlumnos {
   public remove(index: number) {
     this.alumnos.splice(index, 1);
   }
+
+  getAlumnos():Alumno[] {
+    return this.alumnos.filter(
+      (alumno) => alumno.getCarrera()=== 'Ingeniería en Computación'
+    );
+  }
+
+  getAlumnoById(matricula: string) {
+    return this.alumnos.find((alumno) => alumno.getMatricula() === matricula);
+  }
+
+  
 }

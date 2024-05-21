@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component} from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
@@ -42,9 +42,7 @@ class Alumno {
 class ListaAlumnos {
   public alumnos: Alumno[] = [];
 
-  /*constructor() {
-    this.get();
-  }*/
+  
 
   public agregar(alumno: Alumno) {
     this.alumnos.push(alumno);
