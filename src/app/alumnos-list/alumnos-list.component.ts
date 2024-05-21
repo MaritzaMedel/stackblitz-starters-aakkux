@@ -10,6 +10,8 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 export class AlumnosListComponent {
   lista!:ListaAlumnos;
   alumnos:Alumno[] =[];
+  alumnoSeleccionado!:Alumno;
+  mostrarDetalles:boolean=false;
   public listado:FormGroup;
   public listadoForm:FormControl=new FormControl();
  
@@ -28,5 +30,8 @@ export class AlumnosListComponent {
       this.alumnos=this.lista.getAlumnos();
   }
 
-  
+  mostrar():void{
+    this.mostrarDetalles=true;
+    
+  }
 }

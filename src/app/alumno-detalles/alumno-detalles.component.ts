@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Alumno, ListaAlumnos } from '../gestion-horas/gestion-horas.component';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
@@ -9,7 +9,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
   styleUrls: ['./alumno-detalles.component.css'],
 })
 export class AlumnoDetallesComponent {
- public alumno!: Alumno;
+ @Input() public alumno!: Alumno;
  public detalles:FormGroup;
  public detallesForm:FormControl=new FormControl();
 
@@ -29,7 +29,10 @@ constructor(private fb: FormBuilder){
     this.alumno.getEmpresa();
     this.alumno.getHorasServicio();
   }
-
+  
+  mostrar():void{
+    
+  }
 
 
 
